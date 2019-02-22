@@ -25,7 +25,7 @@ env:
     - CONAN_DOCKER_IMAGE: "conanio/clang7"
       CONAN_CLANG_VERSIONS: "7.0"
 
-build_image: "${CONAN_DOCKER_IMAGE}"
+build_image: "${CONAN_DOCKER_IMAGE}":latest
 
 before_script:
   - chmod +x .ci/install.sh
