@@ -30,7 +30,7 @@ before_script:
   - .ci/install.sh
 
 script:
-  - export
+  - sudo chmod -R 666 ${PWD}
   - chmod +x .ci/run.sh
   - .ci/run.sh
 
