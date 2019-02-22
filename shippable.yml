@@ -25,15 +25,8 @@ env:
     - CONAN_DOCKER_IMAGE: "conanio/clang7"
       CONAN_CLANG_VERSIONS: "7.0"
 
-pre_ci_boot:
-  options: "-v /conan:/conan"
-
-before_script:
+pre_ci:
   - chmod +x .ci/install.sh
   - .ci/install.sh
-
-script:
-  - export
-  - cp -R . /conan
   - chmod +x .ci/run.sh
-  - cd /conan && /root/src/github.com/uilianries/conan-cryptopp/.ci/run.sh
+  - .ci/run.sh
