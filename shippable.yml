@@ -26,12 +26,13 @@ env:
       CONAN_CLANG_VERSIONS: "7.0"
 
 pre_ci_boot:
-  options: "-v /var/run/docker.sock:/var/run/docker.sock"
+  options: "-v /conan:/conan"
 
 before_script:
   - chmod +x .ci/install.sh
   - .ci/install.sh
 
 script:
+  - cp -R . /conan
   - chmod +x .ci/run.sh
-  - .ci/run.sh
+  - cd /conan && .ci/run.sh
