@@ -26,7 +26,6 @@ env:
       CONAN_CLANG_VERSIONS: "7.0"
 
 before_script:
-  - ls /usr/bin/
   - chmod +x .ci/install.sh
   - .ci/install.sh
 
