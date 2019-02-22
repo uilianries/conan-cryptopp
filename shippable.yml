@@ -25,8 +25,9 @@ env:
     - CONAN_DOCKER_IMAGE: "conanio/clang7"
       CONAN_CLANG_VERSIONS: "7.0"
 
-pre_ci:
-  - chmod +x .ci/install.sh
-  - .ci/install.sh
-  - chmod +x .ci/run.sh
-  - .ci/run.sh
+build:
+  pre_ci:
+    - chmod +x .ci/install.sh
+    - .ci/install.sh
+    - chmod +x .ci/run.sh
+    - .ci/run.sh
