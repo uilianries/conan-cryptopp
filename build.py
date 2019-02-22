@@ -4,7 +4,6 @@
 from cpt.packager import ConanMultiPackager
 
 if __name__ == "__main__":
-    entry_script = "pwd; ls; sudo ls /root/src/github.com/uilianries"
-    builder = ConanMultiPackager(username="uilianries", docker_entry_script=entry_script)
+    builder = ConanMultiPackager(username="uilianries")
     builder.add_common_builds(pure_c=False)
     builder.run()
