@@ -28,5 +28,7 @@ before_script:
   - .ci/install.sh
 
 script:
+  - pwd
+  - ls
   - chmod +x .ci/run.sh
   - .ci/run.sh
