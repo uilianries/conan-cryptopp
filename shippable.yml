@@ -27,4 +27,4 @@ env:
 
 build:
   pre_ci:
-    - docker run --rm -e CONAN_GCC_VERSIONS="${CONAN_GCC_VERSIONS}" -v ${PWD}:/home/conan ${CONAN_DOCKER_IMAGE} "pip install conan-package-tools && python build.py"
+    - docker run --rm -e CONAN_GCC_VERSIONS="${CONAN_GCC_VERSIONS}" -v ${PWD}:/home/conan ${CONAN_DOCKER_IMAGE} /bin/sh -c "pip install conan-package-tools && python build.py"
