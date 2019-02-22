@@ -1,4 +1,6 @@
 language: python
+python:
+  - 3.4
 
 env:
   matrix:
@@ -22,6 +24,8 @@ env:
       CONAN_CLANG_VERSIONS: "6.0"
     - CONAN_DOCKER_IMAGE: "conanio/clang7"
       CONAN_CLANG_VERSIONS: "7.0"
+
+build_image: "${CONAN_DOCKER_IMAGE}"
 
 before_script:
   - chmod +x .ci/install.sh
