@@ -1,6 +1,4 @@
 language: python
-python:
-  - 3.7.2
 
 env:
   matrix:
@@ -26,6 +24,7 @@ env:
       CONAN_CLANG_VERSIONS: "7.0"
 
 before_script:
+  - ls /usr/bin/
   - chmod +x .ci/install.sh
   - .ci/install.sh
 
