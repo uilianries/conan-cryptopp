@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from bincrafters import build_template_default
+from cpt.packager import ConanMultiPackager
 
 if __name__ == "__main__":
-    builder = build_template_default.get_builder(pure_c=False)
+    entry_script = "pwd; ls; ls /home/conan; ls /"
+    builder = ConanMultiPackager(username="uilianries", docker_entry_script=entry_script)
+    builder.add_common_builds(pure_c=False)
     builder.run()
