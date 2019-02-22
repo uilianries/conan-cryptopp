@@ -25,12 +25,18 @@ env:
     - CONAN_DOCKER_IMAGE: "conanio/clang7"
       CONAN_CLANG_VERSIONS: "7.0"
 
+build:
+  pre_ci_boot:
+    image_name: "${CONAN_DOCKER_IMAGE}"
+    image_tag: "latest"
+    pull: true
+    options:
+      - "--entrypoint=/bin/bash"
+
 before_script:
   - chmod +x .ci/install.sh
   - .ci/install.sh
 
 script:
-  - sudo chmod -R 666 ${PWD}
   - chmod +x .ci/run.sh
   - .ci/run.sh
-
