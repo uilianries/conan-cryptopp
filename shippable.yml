@@ -27,7 +27,4 @@ env:
 
 build:
   pre_ci:
-    - chmod +x .ci/install.sh
-    - .ci/install.sh
-    - chmod +x .ci/run.sh
-    - .ci/run.sh
+    - docker run --rm -e CONAN_GCC_VERSIONS="${CONAN_GCC_VERSIONS}" -v ${PWD}:/home/conan ${CONAN_DOCKER_IMAGE} -c bash python build.py
