@@ -25,6 +25,12 @@ env:
     - CONAN_DOCKER_IMAGE: "conanio/clang7"
       CONAN_CLANG_VERSIONS: "7.0"
 
-build:
-  pre_ci:
-    - docker run --rm -e CONAN_GCC_VERSIONS="${CONAN_GCC_VERSIONS}" -v ${PWD}:/home/conan ${CONAN_DOCKER_IMAGE} /bin/sh -c "pip install conan-package-tools && python build.py"
+before_script:
+  - chmod +x .ci/install.sh
+  - .ci/install.sh
+
+script:
+  - export
+  - chmod +x .ci/run.sh
+  - .ci/run.sh
+
