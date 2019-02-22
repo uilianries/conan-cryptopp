@@ -33,6 +33,7 @@ before_script:
   - .ci/install.sh
 
 script:
+  - export
   - cp -R . /conan
   - chmod +x .ci/run.sh
-  - cd /conan && .ci/run.sh
+  - cd /conan && /root/src/github.com/uilianries/conan-cryptopp/.ci/run.sh
